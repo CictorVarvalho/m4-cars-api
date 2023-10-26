@@ -115,7 +115,7 @@ Padrão de corpo
 }
 ```
 
-Todos os campos dessa rota são opcionais
+Todos os campos desta rota são opcionais
 
 Padrão de resposta
 
