@@ -36,11 +36,16 @@ export class CarsControllers implements ICarsControllers{
         return res.status(200).json(getOne);
     }
 
-    /*
+    
     delete(req: Request, res: Response): Response{
+        const carsServices = new CarsServices();
 
+        carsServices.delete(req.params.id);
+
+        return res.status(204).json();
     }
 
+    /*
     update(req: Request, res: Response): Response{
 
     }

@@ -47,11 +47,14 @@ export class CarsServices implements ICarsServices{
         return car;
     }
 
-    /*
+    
     delete(id: string): void {
-        
+        const index = carsDatabase.findIndex(car => car.id === Number(id));
+
+        carsDatabase.splice(index, 1);
     }
 
+    /*
     update(body: Partial<TCreateBody>, id: string): ICar {
         
     }
