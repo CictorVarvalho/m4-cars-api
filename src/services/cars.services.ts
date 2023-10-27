@@ -29,11 +29,19 @@ export class CarsServices implements ICarsServices{
         return newCar;
     }
 
-    /*
+   
     getMany(search?: string, year?: string): ICar[] {
-        
+        const carsList = carsDatabase.filter(car => {
+            const searchRule = search ? car.model.toLowerCase().includes(search.toLowerCase()) : true;
+            const yearRule = year ? car.year === Number(year) : true;
+
+            return searchRule && yearRule;
+        })
+
+        return carsList;
     }
 
+    /*
     getOne(id: string): ICar {
         
     }

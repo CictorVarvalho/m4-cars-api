@@ -3,7 +3,7 @@ import { CarsServices } from "../services/cars.services";
 
 interface ICarsControllers{
     create(req: Request, res: Response): Response;
-    //getMany(req: Request, res: Response): Response
+    getMany(req: Request, res: Response): Response
     //getOne(req: Request, res: Response): Response
     //delete(req: Request, res: Response): Response
     //update(req: Request, res: Response): Response
@@ -18,11 +18,17 @@ export class CarsControllers implements ICarsControllers{
         return res.status(200).json(create);
     }
 
-    /*
     getMany(req: Request, res: Response): Response{
+        const { search, year } = req.query;
 
+        const carsServices = new CarsServices();
+
+        const getMany = carsServices.getMany(search as string, year as string);
+
+        return res.status(200).json(getMany);
     }
 
+    /*
     getOne(req: Request, res: Response): Response{
 
     }

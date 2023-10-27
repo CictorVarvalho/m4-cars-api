@@ -6,7 +6,7 @@ export const carsRouter = Router();
 const carsControllers = new CarsControllers();
 
 carsRouter.post("/", carsControllers.create);
-carsRouter.get("/");
+carsRouter.get("/", carsControllers.getMany);
 carsRouter.get("/:id");
 carsRouter.delete("/:id");
 carsRouter.patch("/:id");
