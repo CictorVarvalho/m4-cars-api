@@ -7,8 +7,8 @@ import { errorDefaultExpects } from "./utils/errorDefaultExpects";
 
 describe("get cars", () => {
    beforeAll(() => {
-      carsDatabase.push(firstCar);
-      carsDatabase.push(secondCar);
+      carsDatabase.push(firstCar());
+      carsDatabase.push(secondCar());
    });
 
    it("should be able to get cars correctly", async () => {
