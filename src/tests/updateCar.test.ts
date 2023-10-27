@@ -12,7 +12,7 @@ const updateData = {
 
 describe("update car", () => {
    beforeAll(() => {
-      carsDatabase.push(firstCar);
+      carsDatabase.push(firstCar());
    });
 
    it("should be able do update a car sucessfully", async () => {
