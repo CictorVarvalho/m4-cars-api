@@ -60,6 +60,19 @@ describe("get cars", () => {
       expect(data[0].year).toBe(2018);
    });
 
+   it("should be able to get a single car sucessfully", async () => {
+      const data = await request
+      .get("/cars/1")
+      .expect(200)
+      .then((response) => response.body);
+
+      carDefaultExpects(data);
+
+      expect(data.km).toBeDefined();
+      expect(data.km).toBeTypeOf("number");
+   });
+
+
    it("should throw error when the id is incorrect", async () => {
       const data = await request
          .get("/cars/3")
