@@ -4,7 +4,7 @@ import { ICar, TCreateBody, TUpdateBody } from "../interfaces/cars.interface";
 interface ICarsServices{
     create(body: TCreateBody): ICar;
     getMany(search?: string, year?: string): ICar[];
-    //getOne(id: string): ICar;
+    getOne(id: string): ICar;
     //delete(id: string): void;
     //update(body: TUpdateBody, id: string): ICar;
 }
@@ -41,11 +41,13 @@ export class CarsServices implements ICarsServices{
         return carsList;
     }
 
-    /*
     getOne(id: string): ICar {
-        
+        const car = carsDatabase.find(car => car.id === Number(id)) as ICar;
+
+        return car;
     }
 
+    /*
     delete(id: string): void {
         
     }

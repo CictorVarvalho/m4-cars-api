@@ -4,7 +4,7 @@ import { CarsServices } from "../services/cars.services";
 interface ICarsControllers{
     create(req: Request, res: Response): Response;
     getMany(req: Request, res: Response): Response
-    //getOne(req: Request, res: Response): Response
+    getOne(req: Request, res: Response): Response
     //delete(req: Request, res: Response): Response
     //update(req: Request, res: Response): Response
 }
@@ -28,11 +28,15 @@ export class CarsControllers implements ICarsControllers{
         return res.status(200).json(getMany);
     }
 
-    /*
     getOne(req: Request, res: Response): Response{
+        const carsServices = new CarsServices();
 
+        const getOne = carsServices.getOne(req.params.id);
+
+        return res.status(200).json(getOne);
     }
 
+    /*
     delete(req: Request, res: Response): Response{
 
     }
