@@ -78,8 +78,6 @@ describe("get cars", () => {
          .expect(404)
          .then((response) => response.body);
 
-      errorDefaultExpects(data);
-
-      
+      errorDefaultExpects(data);      
    });
 });

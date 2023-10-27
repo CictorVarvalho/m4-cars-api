@@ -5,8 +5,8 @@ interface ICarsControllers{
     create(req: Request, res: Response): Response;
     getMany(req: Request, res: Response): Response
     getOne(req: Request, res: Response): Response
-    //delete(req: Request, res: Response): Response
-    //update(req: Request, res: Response): Response
+    delete(req: Request, res: Response): Response
+    update(req: Request, res: Response): Response
 }
 
 export class CarsControllers implements ICarsControllers{
@@ -45,9 +45,11 @@ export class CarsControllers implements ICarsControllers{
         return res.status(204).json();
     }
 
-    /*
     update(req: Request, res: Response): Response{
+        const carsServices = new CarsServices();
 
+        const update = carsServices.update(req.body, req.params.id);
+
+        return res.status(200).json(update);
     }
-    */
 }

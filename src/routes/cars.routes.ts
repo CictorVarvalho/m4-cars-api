@@ -10,4 +10,4 @@ carsRouter.post("/", carsControllers.create);
 carsRouter.get("/", carsControllers.getMany);
 carsRouter.get("/:id", IsCarIdValid.execute, carsControllers.getOne);
 carsRouter.delete("/:id", IsCarIdValid.execute, carsControllers.delete);
-carsRouter.patch("/:id");
+carsRouter.patch("/:id", IsCarIdValid.execute, carsControllers.update);
