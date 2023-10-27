@@ -38,10 +38,10 @@ describe("get cars", () => {
 
       expect(data).toHaveLength(1);
 
-      carDefaultExpects(data[1]);
+      carDefaultExpects(data[0]);
 
-      expect(data[1].km).toBeDefined();
-      expect(data[1].km).toBeTypeOf("number");
+      expect(data[0].km).toBeDefined();
+      expect(data[0].km).toBeTypeOf("number");
    });
 
    it("should be able to search a car by year sucessfully", async () => {
@@ -57,7 +57,7 @@ describe("get cars", () => {
       expect(data[0].km).toBeDefined();
       expect(data[0].km).toBeTypeOf("number");
 
-      expect(data.year).toBe(2018);
+      expect(data[0].year).toBe(2018);
    });
 
    it("should throw error when the id is incorrect", async () => {
