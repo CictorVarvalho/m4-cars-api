@@ -58,6 +58,7 @@ describe("get cars", () => {
       expect(data[0].km).toBeTypeOf("number");
 
       expect(data[0].year).toBe(2018);
+
    });
 
    it("should be able to get a single car sucessfully", async () => {
@@ -79,6 +80,6 @@ describe("get cars", () => {
          .expect(404)
          .then((response) => response.body);
 
-      errorDefaultExpects(data);
+      errorDefaultExpects(data);      
    });
 });

@@ -18,7 +18,7 @@ describe("create car", () => {
             brand: "Fiat",
             price: 40000,
          })
-         .expect(200)
+         .expect(201)
          .then((response) => response.body);
 
       carDefaultExpects(data);
@@ -36,7 +36,7 @@ describe("create car", () => {
             brand: "Volkswagen",
             price: 40000,
          })
-         .expect(200)
+         .expect(201)
          .then((response) => response.body);
 
       carDefaultExpects(data);
