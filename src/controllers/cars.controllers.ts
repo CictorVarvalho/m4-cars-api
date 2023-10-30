@@ -15,7 +15,7 @@ export class CarsControllers implements ICarsControllers{
 
         const create = carsServices.create(req.body);
 
-        return res.status(200).json(create);
+        return res.status(201).json(create);
     }
 
     getMany(req: Request, res: Response): Response{
