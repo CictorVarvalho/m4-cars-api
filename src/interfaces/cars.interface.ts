@@ -5,9 +5,9 @@ export interface ICar{
     year: number;
     brand: string;
     price?: number;
-    createdAt: Date;
-    updatedAt: Date;
+    createAt: Date;
+    updateAt: Date;
 }
 
-export type TCreateBody = Omit<ICar, "id" | "createdAt" | "updatedAt">;
-export type TUpdateBody = Partial<TCreateBody>;
+export type TCreateBody = Omit<ICar, "id" | "creatAt" | "updateAt">;
+export type TUpdateBody = Partial<TCreateBody>
